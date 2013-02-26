@@ -1,0 +1,88 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>Todo</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<style>
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+</style>
+</head>
+<body>
+    <div id="wrap">
+      <div class="container">
+      	<div class="masthead">
+	        <ul class="nav nav-pills pull-right">
+    	    	{% if user %}
+        		<li class="active"><a href="/accounts/logout">logout</a></li>
+	        	{% endif %}
+	        </ul>
+    	    <h3 class="muted"><a href="/">Todo</a>-be-do-be-do &mdash;
+        	{% if user %}{{user}}{% endif %}</h3>
+      	</div><!-- masthead -->
+
+        <div class="page-header">
+          {% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		  <div class="alert">
+		    <ul class="flashes">
+		    {% for message in messages %}
+		      <li>{{ message }}</li>
+		    {% endfor %}
+		    </ul>
+		</div><!-- alert-->
+		  {% endif %}
+		{% endwith %}
+        </div><!-- pageheader-->
+
+      	<form action="/add" method="POST" class="form-inline" name="form">
+      		<fieldset>
+      			<legend>Add Task</legend>
+				<input name="task" type="text" class="input-xlarge" placeholder="Task"/>
+				<input name="tags" type="text" class="input-small" placeholder="Tags (foo bar)"/>
+				<input name="due" type="date"  value="2013-02-26" class="input-small" />
+				<input type="submit" value="add" class="btn btn-primary"/>
+			</fieldset>
+		</form>
+
+		<h4>Open Tasks</h4>
+			<table class="table table-striped table-bordered table-hover">
+			<tr>
+				<th>&nbsp;</th>
+				<th><a href="/?sortby=title">Todo</a></th>
+				<th>Tags</th>
+				<th><a href="/?sortby=due">Due</a></th>
+			</tr>
+			{% for todo in todos %}
+			<tr>
+				<td>
+					<form action="/del" method="POST" class="form-inline">
+						<input type="hidden" name="task" value="{{todo.id}}">
+						<label class="button"> 
+						<button type="submit" value="done" class="link">x</button>
+						</label>
+					</form>
+				</td>
+				<td>
+					{{todo.task}}
+				</td>
+				<td>
+					{% for tag in todo.tags %}
+						<span class="badge badge-success"><a href="/tag/{{tag.tag}}" style="color: #fff;">{{tag.tag}}</a></span>
+					{% endfor %}
+				</td>
+				<td>{{todo.due}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+      	
+      	<p class="">for the <a href="http://www.meetup.com/python-182/events/102006952/">Python Web Framework Shootout</a> on Feb 26, 2013 at <a href="http://speakeasyindy.com/">The Speak Easy</a> by <a href="http://twitter.com/btbytes">Pradeep Gowda</a>.</p>
+      </div><!-- container -->
+    </div><!-- #wrap -->
+</body>
+</html>
