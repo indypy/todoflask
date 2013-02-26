@@ -1,22 +1,61 @@
 % Todo-be-do-be-do with Flask
-% Pradeep Gowda -- @btbytes
-% Feb 28, 2013
+% Pradeep Gowda
+% Feb 26, 2013
+
+# About me
+
+  * Pradeep Gowda -- `@btbytes`
+  * CIO at ENthEnergy LLC
+  * Python user since the last millenium(1999)
+  * Using Python professionally since 2002
+
 
 # Flask
 
-  * Created by Armin Ronacher
+  * A micro framework by Armin Ronacher
+  * Based on Werkzeug, Jinja2 and good intentions (and taste)
+  * Clean way to write small apps
+
+
+# Inspirations
+
   * Started out as an April fool's joke
-  * 
+    * `http://denied.immersedcode.org/deny.py`
+  * Name was a play on the bottle framework
+    * Since then has grown in popularity    
 
-# Flask Origins
+# A Micro framework
 
-# When to Flask?
+  * Simplicity and Small
+  * Entire `app` in handful of modules
+  * Freedom to choose libraries you like
 
-  * Think Hip.
-  * Think App vs Application
-  * Think standalone Service
-  * Think web apps interacting over HTTP vs lib calls.
 
+# Key features of Flask
+
+  * Easy to learn
+  * Good, tasteful defaults
+  * Excellent documentation
+  * [Flask-Extensions](http://flask.pocoo.org/extensions/)
+  * [Blueprints](http://flask.pocoo.org/docs/blueprints/)
+    * Application components
+    * Reuse common patterns
+    * (eg: `/admin`, `/user`, `/reports`)
+  * [Flask-Snippets](http://flask.pocoo.org/snippets)
+
+
+# Popular combinations
+
+  * Flask + Jinja2 + SQLAlchemy
+  * Flask + Mako + SQLAlchemy
+  * Flask + Jinja2 + Peewee
+  * Flask + CouchDB
+
+
+# How to Install
+
+  * `pip install Flask`
+  * `http://flask.pocoo.org`
 
 
 # Hello world
@@ -34,53 +73,38 @@ if __name__ == '__main__':
 	app.run()
 ~~~~
 
-# A more 'complete' webapp
+Visit the app at `http://localhost:5000`.
 
-~~~~{.python}
-from flask import Flask, render_template
+# Defaults
 
-app = Flask(__name__)
+  * Look under `templates` for templates (default Jinja2)
+  * Look under `static` for assets (`CSS`, `js` etc.,)
 
-@app.route('/')
-def index():
-	return render_template('index.html')
+# The todo app
 
-if __name__ == '__main__':
-	app.run()
-~~~~
-
-----
-
-Where `index.html` is:
-
-~~~~{.html}
-
-~~~~
+  * Flask
+  * Sqlite for persistence
+  * PeeWee for ORM
+  * Flask-Peewee wrapper + Authentication
+  * Bootstrap for CSS
 
 
+# App Demo
 
-----
+Todo-be-do-be-do
 
-### 3...
 
-----
-  
-### 2...
+# When to Flask?
 
----
+  * Think App vs Application
+  * Think standalone Services (JSON/REST)
+  * Think web apps interacting over HTTP vs lib calls.
 
-### Get on with it
-  
-----
 
-## EEK! A hoo-man
+# Thank you
 
-----
+The code for the application and the presentation are available at
 
-I am a machine, you insensitive clod!
+  * http://github.com/indypy/todoflask
 
-----
-
-What now?
-
-----
+Questions to `pradeep@btbytes.com` or `@btbytes`.
