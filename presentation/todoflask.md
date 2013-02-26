@@ -8,7 +8,9 @@
   * CIO at ENthEnergy LLC
   * Python user since the last millenium(1999)
   * Using Python professionally since 2002
-
+  * Python geneology
+    * Python/COM, Zope, Plone, Django, 
+    * web.py, Pylons, Flask, Pyramid
 
 # Flask
 
@@ -22,7 +24,7 @@
   * Started out as an April fool's joke
     * `http://denied.immersedcode.org/deny.py`
   * Name was a play on the bottle framework
-    * Since then has grown in popularity    
+    * Since then has grown in popularity
 
 # A Micro framework
 
@@ -67,10 +69,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return 'Hello, World!'
+        return 'Hello, World!'
 
 if __name__ == '__main__':
-	app.run()
+        app.run()
 ~~~~
 
 Visit the app at `http://localhost:5000`.
@@ -85,8 +87,10 @@ Visit the app at `http://localhost:5000`.
   * Flask
   * Sqlite for persistence
   * PeeWee for ORM
+  * WTForms for Forms
   * Flask-Peewee wrapper + Authentication
   * Bootstrap for CSS
+  * NO javascript
 
 
 # App Demo
