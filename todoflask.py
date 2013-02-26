@@ -107,6 +107,7 @@ def delete_task():
     tskid = request.form['task']
     #XXX: delete only those tasks belonging to the user
     tskobj = Task.get(Task.id == tskid)
+    tskobj.delete_instance()
     query = TaskTag.delete().where(TaskTag.task == tskid)
     query.execute()
     flash("Task deleted.")
