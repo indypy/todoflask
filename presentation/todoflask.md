@@ -16,15 +16,16 @@
 
   * A micro framework by Armin Ronacher
   * Based on Werkzeug, Jinja2 and good intentions (and taste)
-  * Clean way to write small apps
+  * Clean way to write *start* small
 
 
 # Inspirations
 
   * Started out as an April fool's joke
-    * `http://denied.immersedcode.org/deny.py`
+    * [http://denied.immersedcode.org/](http://denied.immersedcode.org/)
+    * [http://denied.immersedcode.org/deny.py](http://denied.immersedcode.org/deny.py)
   * Name was a play on the bottle framework
-    * Since then has grown in popularity
+    * Since then has grown to be a big name.
 
 # A Micro framework
 
