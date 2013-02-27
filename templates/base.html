@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>Todo</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<style>
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+</style>
+</head>
+<body>
+    <div id="wrap">
+      <div class="container">
+      	 <h2>{% block content_title %}{% endblock %}</h2>
+  {% block content %}{% endblock %}
+      </div><!-- container -->
+    </div><!-- #wrap -->
+</body>
+</html>
